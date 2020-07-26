@@ -22,6 +22,8 @@ module.exports = {
 
     'no-console': process.env.NODE_ENV === 'production' ? 'off' : 'warn',
 
+    'no-unused-vars': 'warn',
+
     'vue/component-tags-order': [
       'error',
       {
@@ -97,11 +99,7 @@ module.exports = {
       },
     ],
 
-    // 对象加空格
-    'object-curly-spacing': [
-      'error',
-      'always',
-    ],
+
 
     // 对象多个属性在不同行，
     'object-property-newline': [
@@ -123,6 +121,15 @@ module.exports = {
     'block-spacing': [
       'error',
       'always',
+    ],
+
+    // 关键字空格
+    'keyword-spacing': [
+      'error',
+      {
+        'before': true,
+        'after': true,
+      },
     ],
 
     // 'brace-style': ['error', '1tbs'], // 强制在代码块中使用一致的大括号风格 if...else
@@ -215,6 +222,12 @@ module.exports = {
         'multiline': true,
         'minItems': 2,
       },
+    ],
+
+    // 对象加空格
+    'object-curly-spacing': [
+      'error',
+      'always',
     ],
   },
   overrides: [

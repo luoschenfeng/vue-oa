@@ -1,14 +1,6 @@
-export const isArray = Array.isArray
-
-export function isObject(obj) {
-  const type = typeof obj
-
-  if (obj !== null && type === 'object') {
-    return true
-  } else {
-    return false
-  }
-}
+import {
+  isArray, isObject,
+} from './validate'
 
 /**
  *
@@ -64,8 +56,8 @@ export function debounce(func, wait, immediate) {
   }
 
 
-  return function (...innerargs) {
-    args = innerargs
+  return function (...innerArgs) {
+    args = innerArgs
     context = this
     currentTimestamp = +new Date()
     const callNow = immediate && !timeout
@@ -87,3 +79,5 @@ export function debounce(func, wait, immediate) {
     return result
   }
 }
+
+

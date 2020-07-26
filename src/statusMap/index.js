@@ -1,2 +1,0 @@
-export const SUCCESS_HTTP_REQUEST_STATUS =  1
-

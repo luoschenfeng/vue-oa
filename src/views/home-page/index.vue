@@ -9,12 +9,8 @@
 
 <script>
 import {
-  getPVBySexStatisticsData,
+  getPVBySexStatistics,
 } from '@/api/home-page'
-
-import {
-  SUCCESS_HTTP_REQUEST_STATUS,
-} from '@/statusMap'
 
 export default {
   data() {
@@ -35,21 +31,14 @@ export default {
       this.loading = true
       const params = this.requestParams
 
-      getPVBySexStatisticsData(params).then(res => {
-        if (res.status ===  SUCCESS_HTTP_REQUEST_STATUS) {
+      getPVBySexStatistics(params)
+        .then(data => {
+          this.sexStatisticMonthly = data
+        })
+        .catch(err => {
           this.loading = false
-          this.sexStatisticMonthly = res.data
-        } else {
-
-          this.$message({
-            showClose: true,
-            message: this.$t('HTTP_STATUS_UNKNOWN'),
-          });
-        }
-      }).catch(err => {
-        this.loading = false
-        throw new Error(err)
-      })
+          throw new Error(err)
+        })
     },
   },
 }
