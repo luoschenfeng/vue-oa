@@ -93,9 +93,7 @@ export default {
     }
   },
   computed: {
-    nextQuery() {
-      return this.$delete(this.$route.query, 'next')
-    },
+
     next() {
       return this.$route.query.next || '/'
     },
@@ -111,13 +109,7 @@ export default {
 
           this.$store.dispatch('user/login', params)
             .then(() => {
-
-              // this.$router.push({
-
-              //   path: this.next,
-              //   query: this.nextQuery,
-              // })
-              this.$router.push('/')
+              this.$router.push(this.next)
             })
             .catch(err => { throw new Error(err) })
         })

@@ -13,7 +13,7 @@ const mutations = {
 }
 
 /**
- * Use meta.role to determine if the current user has permission
+ * @description Use meta.role to determine if the current user has permission
  * @param route
  * @param roles
  */
@@ -26,7 +26,7 @@ function hasPermission(route, roles) {
 }
 
 /**
- *
+ * @description 依据权限过滤路由
  * @param {object} dynimicRoutes
  * @param {Array} roles
  */

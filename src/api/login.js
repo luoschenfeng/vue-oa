@@ -1,7 +1,7 @@
 import request from '@/unit/request'
 
 /**
- * 登录
+ * @description 登录
  * @param {object} params
  * @param {string} params.username
  * @param {object} params.password
@@ -15,7 +15,7 @@ export function login(params) {
 }
 
 /**
- * 登出
+ * @description 登出
  */
 export function logout() {
   return request({
@@ -24,7 +24,7 @@ export function logout() {
 }
 
 /**
- * 用户信息
+ * @description 获取用户信息，不用传参，用token
  */
 export function getUserInfo() {
   return request({

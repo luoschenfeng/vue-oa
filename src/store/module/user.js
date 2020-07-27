@@ -41,7 +41,7 @@ const mutations = {
 const actions = {
 
   /**
-   * 登录对store的操作
+   * @description 登录对store的操作
    * @param {object} param0
    * @param {object} param0.commit
    * @param {object} params
@@ -67,7 +67,7 @@ const actions = {
   },
 
   /**
-   * 登出
+   * @description 登出
    * @param {object} param0
    * @param {object} param0.commit
    */
@@ -86,7 +86,7 @@ const actions = {
   },
 
   /**
-   * 用户信息
+   * @description 用户信息
    * @param {object} param0
    * @param {object} param0.commit
    */

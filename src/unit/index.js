@@ -23,7 +23,7 @@ function emptyObject(obj, NUMBERZERO) {
 }
 
 /**
- *
+ * @description 判断是否为新的数组
  * @param {object} obj
  * @param {boolean} NUMBERZERO
  */
@@ -37,6 +37,7 @@ export function isEmptyObject(obj, NUMBERZERO = true) {
 }
 
 /**
+ * @description 防抖
  * @param {Function} func
  * @param {number} wait
  * @param {boolean} immediate

@@ -99,7 +99,7 @@ instance.interceptors.response.use(function (response) {
 })
 
 /**
- *
+ * @description 请求封装
  * @param {object} config
  * @param {string} config.url
  * @param {string} config.method

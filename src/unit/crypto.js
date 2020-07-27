@@ -6,7 +6,7 @@ import {
 import AES from 'crypto-js/aes'
 
 /**
- * 获取key
+ * @description 获取key
  * @return {string}
  */
 function createHash() {
@@ -25,7 +25,7 @@ function createHash() {
 
 
 /**
- * aes加密
+ * @description createHash 得到hash加密
  * @param {string} message
  */
 export function encrypto(message) {
