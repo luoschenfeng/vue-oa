@@ -1,11 +1,13 @@
 {
-  "name": "vue-example2",
+  "name": "vue-oa",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
+    "theme:generate": "node theme.config.js",
+    "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -13,8 +15,10 @@
     "core-js": "^3.6.4",
     "crypto-js": "^4.0.0",
     "echarts": "^4.8.0",
+    "element-theme": "^2.0.1",
     "element-ui": "^2.13.2",
     "js-cookie": "^2.2.1",
+    "normalize.css": "^8.0.1",
     "vue": "^2.6.11",
     "vue-i18n": "^8.18.2",
     "vue-router": "^3.3.4",
@@ -31,13 +35,15 @@
     "babel-eslint": "^10.1.0",
     "babel-plugin-component": "^1.1.1",
     "chalk": "^4.1.0",
+    "element-theme-chalk": "^2.13.2",
     "eslint": "^7.4.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
     "fs-extra": "^9.0.1",
-    "json-server": "^0.16.1",
-    "node-sass": "^4.12.0",
+    "sass": "^1.26.10",
     "sass-loader": "^8.0.2",
+    "sass-resources-loader": "^2.0.3",
+    "svg-sprite-loader": "^5.0.0",
     "vue-eslint-parser": "^7.1.0",
     "vue-template-compiler": "^2.6.11"
   }

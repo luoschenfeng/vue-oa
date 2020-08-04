@@ -1,0 +1,6 @@
+$assets: '~@/assets';
+$custom-background-color: #93bda4;
+$background-image: '#{$assets}/green-bg.png';
+
+$login-background-color: $custom-background-color;
+$login-background-image: $background-image;

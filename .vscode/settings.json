@@ -8,5 +8,8 @@
     "source.fixAll": true
   },
 
-  "editor.codeActionsOnSaveTimeout": 3000
+  "editor.codeActionsOnSaveTimeout": 3000,
+  "search.exclude": {
+    "**/node_modules": false
+  }
 }

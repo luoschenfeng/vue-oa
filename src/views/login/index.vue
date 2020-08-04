@@ -1,7 +1,8 @@
 <template>
-  <div class="login-container">
+  <div class="login">
     <el-form
       ref="loginForm"
+      class="login_form"
       :model="LoginForm"
       :rules="LoginFormRules"
     >
@@ -15,7 +16,9 @@
           autocomplete="on"
         />
       </el-form-item>
-      <el-form-item prop="password">
+      <el-form-item
+        prop="password"
+      >
         <el-input
           v-model="LoginForm.password"
           :placeholder="$t('Login.placeholder.password')"
@@ -27,7 +30,7 @@
           @keyup.enter.native="handleLogin"
         />
       </el-form-item>
-      <el-form-item>
+      <el-form-item class="form-item__submit">
         <el-button
           type="primary"
           @click="handleLogin"
@@ -93,7 +96,6 @@ export default {
     }
   },
   computed: {
-
     next() {
       return this.$route.query.next || '/'
     },
@@ -118,3 +120,21 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.login {
+  height: 100%;
+  text-align: center;
+  background: $login-background-color url($login-background-image);
+  @include utils-vertical-center;
+  &_form {
+    display: inline-block;
+    vertical-align: middle;
+    .form-item__submit::v-deep {
+      margin-bottom: 0;
+      .el-button {
+        width: 100%;
+      }
+    }
+  }
+}
+</style>

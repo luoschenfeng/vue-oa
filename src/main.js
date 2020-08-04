@@ -8,8 +8,12 @@ import router from '@/router'
 import '@/router/permission'
 
 // setup element-ui
-import './element-ui'
+import '@/element-ui'
 
+// a modern alternative to CSS resets
+import 'normalize.css/normalize.css'
+import '@/styles/main.scss'
+import '@/icons'
 Vue.config.productionTip = false;
 
 export  default  new Vue({

@@ -1,3 +1,4 @@
+import Layout from '@/components/Layout'
 export default [
   {
     path: '/login',
@@ -6,13 +7,13 @@ export default [
   },
   {
     path: '/',
-    component: () => import('@/views/layout'),
-    redirect: '/home-page',
+    component: Layout,
+    redirect: '/dashboard',
     children: [
       {
-        path: 'home-page',
-        name: 'HomePage',
-        component: () => import('@/views/home-page'),
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: () => import('@/views/dashboard'),
       },
     ],
   },
