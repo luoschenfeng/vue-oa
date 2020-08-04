@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0e5a11"],{"94ff":function(t,e,r){"use strict";r.r(e);var a=function(){var t=this,e=t.$createElement,r=t._self._c||e;return r("div",[t._v(" at laster - router - two "),r("router-link",{attrs:{to:{name:"Dashboard"}}},[t._v(" Dashboard ")]),r("router-link",{attrs:{to:{name:"LasterRouterOne"}}},[t._v(" laster -router - one ")])],1)},n=[],o={},s=o,u=r("2877"),l=Object(u["a"])(s,a,n,!1,null,null,null);e["default"]=l.exports}}]);
+//# sourceMappingURL=chunk-2d0e5a11.f52fa60a.js.map
