@@ -29,7 +29,14 @@ router.beforeEach(async (to, from, next) => {
           let routes = await store.dispatch('permission/generateRoutes', roles)
 
           router.addRoutes(routes)
-          next()
+
+          /*
+          * @see https://juejin.im/post/6844903478880370701
+          */
+          next({
+            ...to,
+            replace: true,
+          })
         }
       } catch (err) {
         next(new Error(err))
