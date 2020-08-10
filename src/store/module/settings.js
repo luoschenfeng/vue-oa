@@ -4,7 +4,7 @@ import {
 const state = {
   theme: getTheme(),
   local: getLocal(),
-  sideBarIsCollapse: false,
+  sidebarCollapse: false,
 }
 
 const mutations = {
@@ -14,8 +14,8 @@ const mutations = {
   SET_LOCAL: (state, local) => {
     state.local = local
   },
-  SET_Side_Bar_Is_Collapse: (state, sideBarIsCollapse) => {
-    state.sideBarIsCollapse = sideBarIsCollapse
+  SET_Sidebar_Collapse: (state, sidebarCollapse) => {
+    state.sidebarCollapse = sidebarCollapse
   },
 }
 
@@ -32,10 +32,10 @@ const actions = {
     commit('SET_LOCAL', local)
     setLocal()
   },
-  setSideBarIsCollapse({
+  setSidebarCollapse({
     commit,
-  }, sideBarIsCollapse) {
-    commit('SET_Side_Bar_Is_Collapse', sideBarIsCollapse)
+  }, sidebarCollapse) {
+    commit('SET_Sidebar_Collapse', sidebarCollapse)
   },
 }
 

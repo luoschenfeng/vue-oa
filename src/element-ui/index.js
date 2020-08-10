@@ -3,6 +3,7 @@ import {
   Button,
   Message,
 
+  Scrollbar,
   Form,
   FormItem,
   Select,
@@ -22,6 +23,7 @@ import {
   Badge,
 } from 'element-ui'
 Vue.use(Button)
+Vue.use(Scrollbar)
 Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Select)

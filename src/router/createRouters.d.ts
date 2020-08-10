@@ -103,11 +103,11 @@ interface IMeta {
    * @description 是否在侧边栏显示
    * @default true （默认显示）
    */
-  sideBarShow?: boolean
+  sidebarShow?: boolean
   /**
    * @description 要激活的侧边栏栏目(接受与redirect同样的参数)
    */
-  sideBarActive?: RedirectOption
+  sidebarActive?: RedirectOption
   /**
    * @description 是否在面包屑显示
    * @default true （默认显示）

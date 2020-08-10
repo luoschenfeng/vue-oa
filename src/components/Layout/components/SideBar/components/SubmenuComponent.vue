@@ -3,10 +3,12 @@
     <template
       v-for="route of routes"
     >
-      <template v-if="route.children && route.children.length">
+      <div
+        v-if="route.children && route.children.length"
+        :key="route.path"
+      >
         <el-submenu
           v-if="submenuShow(route)"
-          :key="route.path"
           :index="route.path"
         >
           <template slot="title">
@@ -19,17 +21,20 @@
               {{ $t(`${route.meta.title}`) }}
             </span>
           </template>
-          <submenu-component :routes="route.children" />
+          <submenu-component
+            :routes="route.children"
+            class="menu__nest"
+          />
         </el-submenu>
         <submenu-component
           v-else
-          :key="route.path"
           :routes="route.children"
         />
-      </template>
+      </div>
       <template v-else-if="submenuShow(route)">
         <router-link
           :key="route.path"
+          class="menu-item_link"
           :to="{name: route.name}"
         >
           <el-menu-item
@@ -59,12 +64,8 @@ export default {
   },
   methods: {
     submenuShow(route) {
-      return route.meta && (route.meta.sideBarShow === undefined || route.meta.sideBarShow) && route.meta.title
+      return route.meta && (route.meta.sidebarShow === undefined || route.meta.sidebarShow) && route.meta.title
     },
-    routerPath(route) {
-      return this.$router.resolve(route)
-    },
-
   },
 }
 </script>
@@ -73,5 +74,6 @@ export default {
 .svg-icon {
   width: 14px;
   height: 14px;
+  vertical-align: -0.25em;
 }
 </style>

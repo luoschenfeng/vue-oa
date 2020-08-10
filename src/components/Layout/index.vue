@@ -1,16 +1,13 @@
 <template>
   <div class="layout">
-    <div class="layout_column">
-      <div class="layout_row column_item">
-        <layout-side-bar
-          class="row_item layout_side-bar"
-        />
-        <div class="row_item layout_main">
-          <layout-header class="main_header" />
-          <router-view class="main_view" />
-        </div>
-      </div>
-      <layout-footer class="column_item layout_footer" />
+    <layout-header
+      class="layout_header"
+    />
+    <div class="layout_main">
+      <layout-sidebar
+        class="main_sidebar"
+      />
+      <router-view :class="[sidebarCollapse ? 'main_view__resize' : '','main_view']" />
     </div>
     <layout-sittings class="layout_sittings" />
   </div>
@@ -19,39 +16,43 @@
 <script>
 
 import LayoutHeader from './components/header'
-import LayoutSideBar from './components/SideBar'
+import LayoutSidebar from './components/sidebar'
 import LayoutSittings from './components/setting'
-import LayoutFooter from './components/footer'
 export default {
   name: 'Layout',
   components: {
     LayoutHeader,
-    LayoutSideBar,
+    LayoutSidebar,
     LayoutSittings,
-    LayoutFooter,
+  },
+  computed: {
+    sidebarCollapse() {
+      return this.$store.getters['sidebarCollapse']
+    },
   },
 }
 </script>
 <style lang="scss" scoped>
 .layout {
-  height: 100%;
-  position: relative;
-  .layout_column {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    .layout_row {
-      flex-grow: 1;
-      display: flex;
-      .layout_side-bar {
-        width: 20rem;
-      }
-      .layout_main {
-        flex-grow: 1;
-      }
+  // height: calc(100% - #{$header-height});
+  // position: relative;
+  .layout_header {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+  }
+  .layout_main {
+    .main_sidebar {
+      position: fixed;
+      top: $header-height;
     }
-    .footer_scope {
-
+    .main_view {
+      padding: 10rem;
+      margin-left: $sidebar-max-width;
+      transition: margin 0.24s;
+      &.main_view__resize {
+        margin-left: $sidebar-min-width;
+      }
     }
   }
 }

@@ -4,5 +4,5 @@ export default {
   routes: state => state.permission.routes,
   theme: state => state.settings.theme,
   local: state => state.settings.local,
-  sideBarIsCollapse: state => state.settings.sideBarIsCollapse,
+  sidebarCollapse: state => state.settings.sidebarCollapse,
 }

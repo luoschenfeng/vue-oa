@@ -1,40 +1,49 @@
 <template>
-  <div class="side-bar">
-    <div class="side-bar_title">
-      <router-link
-        class="title_inline title_inline__h2"
-        to="/"
-        tag="h2"
+  <div class="sidebar_menu">
+    <el-scrollbar wrap-class="scrollbar-wrapper">
+      <el-menu
+        :default-active="menu.cuttentActive"
+        :collapse="sidebarCollapse"
+        :collapse-transition="false"
+        :background-color="variables.menuBg"
+        :text-color="variables.menuText"
+        :unique-opened="false"
+        :active-text-color="variables.menuActiveText"
       >
-        vue-oa
-      </router-link>
-    </div>
-    <menu-component />
+        <submenu-component :routes="routes" />
+      </el-menu>
+    </el-scrollbar>
   </div>
 </template>
 
 <script>
-import MenuComponent from './components/MenuComponent'
+import SubmenuComponent from './components/SubmenuComponent'
+import variables from '@/styles/variables.scss'
 export default {
-  name: 'LayoutSideBar',
+  name: 'LayoutSidebar',
   components: {
-    MenuComponent,
+    SubmenuComponent,
+  },
+  data() {
+    return {
+      menu: {
+        cuttentActive: 'dashboard',
+      },
+    }
+  },
+  computed: {
+    routes() {
+      return this.$store.getters['routes']
+    },
+    sidebarCollapse() {
+      return this.$store.getters['sidebarCollapse']
+    },
+    variables() {
+      return variables
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.layout_side-bar {
-  overflow: hidden;
-  .side-bar_title{
-    height: $header-height;
-    line-height: $header-height;
-    .title_inline__h2 {
-      @include hasEvent;
-      text-align: center;
-      font-size: $font-size-h2;
-
-    }
-  }
-}
 </style>

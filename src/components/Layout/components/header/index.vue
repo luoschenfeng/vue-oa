@@ -1,10 +1,29 @@
 <template>
   <div class="header">
+    <div
+      :collapse="sidebarCollapse"
+      :class="[sidebarCollapse ? 'header_title__collapse' : '', 'header_title']"
+    >
+      <router-link
+        class="title_link"
+        to="/"
+        tag="h2"
+      >
+        <svg-icon
+          class-name="vue"
+          class="icon_vue"
+        />
+        <span
+          v-if="!sidebarCollapse"
+          class="title_link title_link__h2"
+        >vue-oa</span>
+      </router-link>
+    </div>
     <div class="header_menu">
       <svg-icon
         class-name="menu"
         class="menu_icon"
-        @click="toggleSideBar"
+        @click="handleToggleSidebar"
       />
     </div>
     <div class="header_search">
@@ -77,12 +96,12 @@ export default {
     };
   },
   computed: {
-    sideBarIsCollapse: {
+    sidebarCollapse: {
       get() {
-        return this.$store.getters['sideBarIsCollapse']
+        return this.$store.getters['sidebarCollapse']
       },
-      set(val) {
-        this.$store.dispatch('settings/setSideBarIsCollapse', val)
+      set(sidebarCollapse) {
+        this.$store.dispatch('settings/setSidebarCollapse', sidebarCollapse)
       },
     },
   },
@@ -90,8 +109,8 @@ export default {
     handleClick() {
       this.showInput = !this.showInput
     },
-    toggleSideBar() {
-      this.sideBarIsCollapse = !this.sideBarIsCollapse
+    handleToggleSidebar() {
+      this.sidebarCollapse = !this.sidebarCollapse
     },
   },
 }
@@ -99,9 +118,35 @@ export default {
 <style lang="scss" scoped>
 .header {
   display: flex;
+  background: $headerBg;
+  color: $font-color-light;
   justify-content: space-between;
   align-items: center;
   height: $header-height;
+  width: 100%;
+  .header_title {
+    height: $header-height;
+    line-height: $header-height;
+    box-sizing: border-box;
+    width: $sidebar-max-width;
+    transition: $width-transition-base;
+    // border-right: 1px solid $--border-color-lighter;
+    // border-bottom: 1px solid $--border-color-lighter;
+    // &:hover {
+    //   border-right: 1px solid $--border-color-base;
+    // }
+    &.header_title__collapse {
+      width: $sidebar-min-width;
+    }
+    .title_link {
+      @include hasEvent;
+      text-align: center;
+      font-size: $font-size-h2;
+      .title_link__h2 {
+        padding-left: 1rem;
+      }
+    }
+  }
   .header_menu::v-deep {
     .menu_icon {
       @include hasEvent;
