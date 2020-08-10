@@ -1,15 +1,11 @@
 <template>
   <div>
+    footer
   </div>
 </template>
 
 <script>
-export default {
-  name: 'AppSideBar',
-  data() {
-    return {}
-  },
-}
+export default {}
 </script>
 
 <style>

@@ -26,5 +26,19 @@ export default {
       return `#icon-${this.className}`
     },
   },
+  created() {
+
+    // svg debugger
+    if (process.env.NODE_ENV === 'development') {
+      if (!this.$svgList.includes(this.className)) {
+        /* eslint no-console: ["warn", { allow: ["warn"] }] */
+        console.warn(`[SvgIcon] plase add the '${this.className}.svg' file at path '@/icons/svg'`)
+      }
+      if (this.className === 'default-menu') {
+        /* eslint no-console: ["warn", { allow: ["warn"] }] */
+        console.warn(`[SvgIcon] you used 'default-menu.svg' place chenge!`)
+      }
+    }
+  },
 }
 </script>

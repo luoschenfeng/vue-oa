@@ -15,7 +15,8 @@ export const i18n = new VueI18n({
   messages: {
     zh: zhLocale,
   },
-  missing: (local, key) => { throw new Error(`the ${local} local not find the key: ${key}`) },
+  /* eslint no-console: ["warn", { allow: ["warn"] }] */
+  missing: (local, key) => { console.warn(`[VueI18n] the ${local} local not find the key: ${key}`) },
 })
 
 export function loadLanguageAsync(lang) {

@@ -9,7 +9,7 @@
       <el-form-item prop="username">
         <el-input
           v-model="LoginForm.username"
-          :placeholder="$t('Login.placeholder.username')"
+          :placeholder="$t('login.placeholder.username')"
           name="username"
           type="text"
           tabindex="1"
@@ -21,7 +21,7 @@
       >
         <el-input
           v-model="LoginForm.password"
-          :placeholder="$t('Login.placeholder.password')"
+          :placeholder="$t('login.placeholder.password')"
           name="password"
           type="text"
           tabindex="2"
@@ -33,9 +33,10 @@
       <el-form-item class="form-item__submit">
         <el-button
           type="primary"
+          :disabled="disabled"
           @click="handleLogin"
         >
-          {{ $t('Login.text.login') }}
+          {{ $t('login.text.login') }}
         </el-button>
       </el-form-item>
     </el-form>
@@ -59,18 +60,18 @@ export default {
     let validate = {
       username(rule, val, callback) {
         if (val.length < 3 || val.trim().length > 15) {
-          callback(new Error(vm.$t('Login.prompt.usernameLength')));
+          callback(new Error(vm.$t('login.prompt.usernameLength')));
         } else if (!match(val, usernameRegExp)) {
-          callback(new Error(vm.$t('Login.prompt.usernameFormat')));
+          callback(new Error(vm.$t('login.prompt.usernameFormat')));
         } else {
           callback()
         }
       },
       password(rule, val, callback) {
         if (val.length < 8 || val.trim().length > 30) {
-          callback(new Error(vm.$t('Login.prompt.passwordLength')));
+          callback(new Error(vm.$t('login.prompt.passwordLength')));
         } else if (!match(val, passwordRegExp)) {
-          callback(new Error(vm.$t('Login.prompt.passwordFormat')));
+          callback(new Error(vm.$t('login.prompt.passwordFormat')));
         } else {
           callback()
         }
@@ -93,6 +94,7 @@ export default {
         },
       },
       loading: false,
+      disabled: false,
     }
   },
   computed: {
@@ -102,6 +104,7 @@ export default {
   },
   methods: {
     handleLogin() {
+      this.disabled = true
       encrypto(this.LoginForm.password)
         .then(encryptedPassword => {
           let params = {
@@ -111,11 +114,18 @@ export default {
 
           this.$store.dispatch('user/login', params)
             .then(() => {
+              this.disabled = false
               this.$router.push(this.next)
             })
-            .catch(err => { throw new Error(err) })
+            .catch(err => {
+              this.disabled = false
+              throw new Error(err)
+            })
         })
-        .catch(err => { throw new Error(err) })
+        .catch(err => {
+          this.disabled = false
+          throw new Error(err)
+        })
     },
   },
 }

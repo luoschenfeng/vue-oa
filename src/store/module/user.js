@@ -14,7 +14,6 @@ const state = {
   roles: [],
   avatar: DEFAULT_AVATAR,
   username: '',
-  local: 'zh-CN',
 }
 
 const mutations = {
@@ -32,9 +31,6 @@ const mutations = {
   },
   SET_USERNAME(state, username) {
     state.username = username
-  },
-  SET_LOCAL(state, local) {
-    state.local = local
   },
 }
 
@@ -103,7 +99,6 @@ const actions = {
           commit('SET_ROLE', roles)
           commit('SET_AVATAR', avatar)
           commit('SET_USERNAME', username)
-          commit('SET_LOCAL', local)
           resolve({
             roles,
             avatar,

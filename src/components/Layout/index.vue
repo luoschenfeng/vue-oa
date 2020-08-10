@@ -1,32 +1,58 @@
 <template>
   <div class="layout">
-    <app-header />
-    <app-side-bar />
-    <app-sittings />
-    <app-footer />
-    <router-view />
+    <div class="layout_column">
+      <div class="layout_row column_item">
+        <layout-side-bar
+          class="row_item layout_side-bar"
+        />
+        <div class="row_item layout_main">
+          <layout-header class="main_header" />
+          <router-view class="main_view" />
+        </div>
+      </div>
+      <layout-footer class="column_item layout_footer" />
+    </div>
+    <layout-sittings class="layout_sittings" />
   </div>
 </template>
 
 <script>
 
-import AppHeader from './components/AppHeader'
-import AppSideBar from './components/AppSideBar'
-import AppSittings from './components/AppSittings'
-import AppFooter from './components/AppFooter'
+import LayoutHeader from './components/header'
+import LayoutSideBar from './components/SideBar'
+import LayoutSittings from './components/setting'
+import LayoutFooter from './components/footer'
 export default {
   name: 'Layout',
-
   components: {
-    AppHeader,
-    AppSideBar,
-    AppSittings,
-    AppFooter,
+    LayoutHeader,
+    LayoutSideBar,
+    LayoutSittings,
+    LayoutFooter,
   },
 }
 </script>
 <style lang="scss" scoped>
 .layout {
-  // background: $--color-primary;
+  height: 100%;
+  position: relative;
+  .layout_column {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    .layout_row {
+      flex-grow: 1;
+      display: flex;
+      .layout_side-bar {
+        width: 20rem;
+      }
+      .layout_main {
+        flex-grow: 1;
+      }
+    }
+    .footer_scope {
+
+    }
+  }
 }
 </style>
