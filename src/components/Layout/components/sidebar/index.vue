@@ -2,7 +2,7 @@
   <div class="sidebar_menu">
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
-        :default-active="menu.cuttentActive"
+        :default-active="activeMenu"
         :collapse="sidebarCollapse"
         :collapse-transition="false"
         :unique-opened="false"
@@ -35,6 +35,21 @@ export default {
     },
     sidebarCollapse() {
       return this.$store.getters['sidebarCollapse']
+    },
+    activeMenu() {
+
+      const route = this.$route
+
+      const {
+        meta, path,
+      } = route
+
+
+      // if set path, the sidebar will highlight the path you set
+      if (meta.sidebarActive) {
+        return meta.sidebarActive
+      }
+      return path
     },
 
     // variables() {

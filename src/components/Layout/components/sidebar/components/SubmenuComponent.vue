@@ -5,11 +5,11 @@
     >
       <div
         v-if="route.children && route.children.length"
-        :key="route.path"
+        :key="path(route)"
       >
         <el-submenu
           v-if="submenuShow(route)"
-          :index="route.path"
+          :index="path(route)"
         >
           <template slot="title">
             <svg-icon
@@ -22,23 +22,25 @@
             </span>
           </template>
           <submenu-component
+            :relative-path="path(route)"
             :routes="route.children"
             class="menu__nest"
           />
         </el-submenu>
         <submenu-component
           v-else
+          :relative-path="path(route)"
           :routes="route.children"
         />
       </div>
       <template v-else-if="submenuShow(route)">
         <router-link
-          :key="route.path"
+          :key="path(route)"
           class="menu-item_link"
-          :to="{name: route.name}"
+          :to="path(route)"
         >
           <el-menu-item
-            :index="route.path"
+            :index="path(route)"
           >
             <svg-icon
               :class-name="route.meta.icon || 'default-menu'"
@@ -56,15 +58,36 @@ export default {
   name: 'SubmenuComponent',
   props: {
     routes: {
-      type: Array,
       default() {
         return []
       },
+      type: Array,
+    },
+    relativePath: {
+      default() {
+        return ''
+      },
+      type: String,
     },
   },
   methods: {
     submenuShow(route) {
       return route.meta && (route.meta.sidebarShow === undefined || route.meta.sidebarShow) && route.meta.title
+    },
+    path(route) {
+      if (route.path[0] === '/') {
+        return route.path
+      } else {
+        if (this.relativePath.length > 1) {
+          if (this.relativePath[-1] === '/') {
+            return this.relativePath + route.path
+          } else {
+            return this.relativePath + '/' + route.path
+          }
+        } else {
+          return '/' + route.path
+        }
+      }
     },
   },
 }
