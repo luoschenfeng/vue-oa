@@ -1,6 +1,6 @@
 <template>
   <div>
-    <echart-card card-title="依据性别网站访问量统计">
+    <echart-card :card-title="$t('dashboard.echart.barChartTitle')">
       <BarChart
         :chart-data="sexStatisticMonthly"
         class-name="chart"
