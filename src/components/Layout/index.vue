@@ -8,7 +8,9 @@
         :class="[sidebarCollapse ? 'main_sidebar__resize' : '','main_sidebar']"
       />
       <keep-alive>
-        <router-view :class="[sidebarCollapse ? 'main_view__resize' : '','main_view']" />
+        <div :class="[sidebarCollapse ? 'main_view__resize' : '','main_view']">
+          <router-view class="section-container" />
+        </div>
       </keep-alive>
     </div>
     <layout-sittings class="layout_sittings" />
@@ -37,14 +39,14 @@ export default {
 <style lang="scss" scoped>
 .layout {
   height: 100%;
-  // position: relative;
   .layout_header {
     position: fixed;
     top: 0;
     z-index: 999;
   }
   .layout_main {
-    height: 100%;
+    height: calc(100% - #{$header-height});
+    padding-top: $header-height;
     .main_sidebar {
       position: fixed;
       top: $header-height;
@@ -54,13 +56,16 @@ export default {
       }
     }
     .main_view {
-      padding-top: $header-height;
+      height: 100%;
       position: relative;
       margin-left: $sidebar-max-width;
       background-color: $app-bg;
       transition: margin 0.24s;
       &.main_view__resize {
         margin-left: $sidebar-min-width;
+      }
+      .section-container {
+        background-color: $app-bg;
       }
     }
   }
