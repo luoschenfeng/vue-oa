@@ -1,26 +1,23 @@
 @mixin menu-classics-theme {
   .el-submenu__title {
     color: $font-color-light;
-    &:hover {
-      background-color: $menuHover;
-    }
     &:focus {
       background-color: $menuBg;
+    }
+    &:hover {
+      background-color: $menuHover;
     }
   }
   .el-menu-item {
     color: $font-color-light;
-    &:hover {
-      background-color: $menuHover;
-    }
     &:focus {
       background-color: $menuBg;
     }
+    &:hover {
+      background-color: $menuHover;
+    }
     &.is-active {
       color: $menuActiveText;
-      &:hover {
-        background-color: $menuHover;
-      }
     }
   }
 }
