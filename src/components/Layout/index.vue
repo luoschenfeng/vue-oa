@@ -7,11 +7,9 @@
       <layout-sidebar
         :class="[sidebarCollapse ? 'main_sidebar__resize' : '','main_sidebar']"
       />
-      <transition name="fade-in">
-        <keep-alive>
-          <router-view :class="[sidebarCollapse ? 'main_view__resize' : '','main_view']" />
-        </keep-alive>
-      </transition>
+      <keep-alive>
+        <router-view :class="[sidebarCollapse ? 'main_view__resize' : '','main_view']" />
+      </keep-alive>
     </div>
     <layout-sittings class="layout_sittings" />
   </div>
@@ -38,7 +36,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .layout {
-  // height: calc(100% - #{$header-height});
+  height: 100%;
   // position: relative;
   .layout_header {
     position: fixed;
@@ -46,6 +44,7 @@ export default {
     z-index: 999;
   }
   .layout_main {
+    height: 100%;
     .main_sidebar {
       position: fixed;
       top: $header-height;
@@ -55,11 +54,11 @@ export default {
       }
     }
     .main_view {
-      padding: 1rem;
-      padding-top: 6rem;
+      padding-top: $header-height;
+      position: relative;
       margin-left: $sidebar-max-width;
+      background-color: $app-bg;
       transition: margin 0.24s;
-      background-color: $main-view-bg;
       &.main_view__resize {
         margin-left: $sidebar-min-width;
       }
