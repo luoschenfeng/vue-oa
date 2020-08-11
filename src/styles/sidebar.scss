@@ -3,11 +3,11 @@
   width: $sidebar-max-width;
   box-sizing: border-box;
   transition: $width-transition-base;
-  // background-color: $menuBg;
+  background-color: $menuBg;
   .el-scrollbar {
     height: 100%;
     .scrollbar-wrapper {
-      height: 100%;
+      overflow-x: hidden;
       .el-scrollbar__view {
         height: 100%;
         .el-menu {

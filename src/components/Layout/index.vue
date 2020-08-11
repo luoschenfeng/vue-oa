@@ -5,7 +5,7 @@
     />
     <div class="layout_main">
       <layout-sidebar
-        class="main_sidebar"
+        :class="[sidebarCollapse ? 'main_sidebar__resize' : '','main_sidebar']"
       />
       <router-view :class="[sidebarCollapse ? 'main_view__resize' : '','main_view']" />
     </div>
@@ -45,6 +45,10 @@ export default {
     .main_sidebar {
       position: fixed;
       top: $header-height;
+      width: $sidebar-max-width;
+      &.main_sidebar__resize {
+        width: $sidebar-min-width;
+      }
     }
     .main_view {
       padding: 10rem;
