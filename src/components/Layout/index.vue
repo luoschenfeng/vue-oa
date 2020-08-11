@@ -7,7 +7,11 @@
       <layout-sidebar
         :class="[sidebarCollapse ? 'main_sidebar__resize' : '','main_sidebar']"
       />
-      <router-view :class="[sidebarCollapse ? 'main_view__resize' : '','main_view']" />
+      <transition name="fade-in">
+        <keep-alive>
+          <router-view :class="[sidebarCollapse ? 'main_view__resize' : '','main_view']" />
+        </keep-alive>
+      </transition>
     </div>
     <layout-sittings class="layout_sittings" />
   </div>
@@ -51,9 +55,11 @@ export default {
       }
     }
     .main_view {
-      padding: 10rem;
+      padding: 1rem;
+      padding-top: 6rem;
       margin-left: $sidebar-max-width;
       transition: margin 0.24s;
+      background-color: $main-view-bg;
       &.main_view__resize {
         margin-left: $sidebar-min-width;
       }
