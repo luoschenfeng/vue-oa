@@ -54,6 +54,7 @@ export default {
       padding: 10rem;
       margin-left: $sidebar-max-width;
       transition: margin 0.24s;
+      background-color: $main-bg;
       &.main_view__resize {
         margin-left: $sidebar-min-width;
       }
