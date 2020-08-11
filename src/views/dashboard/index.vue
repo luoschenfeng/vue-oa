@@ -1,12 +1,11 @@
 <template>
   <div>
-    dashboard
-    <router-link :to="{name: 'Router'}">
-      Router
-    </router-link>
-    <pre>
-      {{ sexStatisticMonthly }}
-    </pre>
+    <echart-card card-title="依据性别网站访问量统计">
+      <BarChart
+        :chart-data="sexStatisticMonthly"
+        class-name="chart"
+      />
+    </echart-card>
   </div>
 </template>
 
@@ -14,14 +13,19 @@
 import {
   getPVBySexStatistics,
 } from '@/api/dashboard'
-
+import BarChart from './components/BarChart'
+import EchartCard from '@/components/EchartCard'
 export default {
   name: 'Dashboard',
+  components: {
+    BarChart,
+    EchartCard,
+  },
   data() {
 
     return {
       requestParams: {},
-      sexStatisticMonthly: {},
+      sexStatisticMonthly: [],
     }
   },
   created() {

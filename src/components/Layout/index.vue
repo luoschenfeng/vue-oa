@@ -55,6 +55,7 @@ export default {
     }
     .main_view {
       position: relative;
+      padding: 1rem;
       margin-left: $sidebar-max-width;
       background-color: $app-bg;
       transition: margin 0.24s;

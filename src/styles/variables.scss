@@ -48,23 +48,42 @@ $border-color-lighter: #ebeef5 !default;
 /// color|1|Border Color|3
 $border-color-extra-light: #f2f6fc !default;
 $width-transition-base: width 0.24s;
+
+// 基础设置
+$font-size-base: 3rem;
+$font-size-h1: $font-size-base;
+$font-size-h2: $font-size-base * (1 - 0.2);
+$font-size-h3: $font-size-base * (1 - 0.3);
+$font-size-h4: $font-size-base * (1 - 0.4);
+$font-size-p: $font-size-base * (1 - 0.4);
+$font-size-h5: $font-size-base * (1 - 0.5);
+$font-size-h6: $font-size-base * (1 - 0.6);
+$font-color-light: #bfcbd9;
+$font-color-lighter: #f4f4f5;
+$bc-primary-base: #333333;
+$bc-primary-light: #3a3d41;
+$bc-primary-light-hover: #46474e;
+$bc-primary-lighter: #dadadd;
+$bc-primary-dark: #1e1e1e;
+$box-shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.12);
+$border-radius-base: 4px;
+$border-radius-small: 2px;
+$border-base: 1px solid $font-color-light;
+
+$app-bg: $bc-primary-lighter;
 $header-height: 5rem;
 $sidebar-max-width: 20rem;
 $sidebar-min-width: 6.5rem;
-
-$font-color-light: #bfcbd9;
-$font-color-lighter: #f4f4f5;
 // sidebar
 $menuText: $font-color-light;
 $menuActiveText: $default-color-primary;
 $subMenuActiveText: $font-color-lighter; // https://github.com/ElemeFE/element/issues/12951
-$app-bg: #dadadd;
-$headerBg: #333333;
-$menuBg: #333333;
-$menuHover: #1e1e1e;
+$headerBg: $bc-primary-base;
+$menuBg: $bc-primary-base;
+$menuHover: $bc-primary-dark;
 
-$subMenuBg: #3a3d41;
-$subMenuHover: #46474e;
+$subMenuBg: $bc-primary-light;
+$subMenuHover: $bc-primary-light-hover;
 
 // the :export directive is the magic sauce for webpack
 // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
