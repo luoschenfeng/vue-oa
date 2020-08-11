@@ -1,9 +1,53 @@
+@mixin menu-classics-theme {
+  .el-submenu__title {
+    color: $font-color-light;
+    &:hover {
+      background-color: $menuHover;
+    }
+    &:focus {
+      background-color: $menuBg;
+    }
+  }
+  .el-menu-item {
+    color: $font-color-light;
+    &:hover {
+      background-color: $menuHover;
+    }
+    &:focus {
+      background-color: $menuBg;
+    }
+    &.is-active {
+      color: $menuActiveText;
+      &:hover {
+        background-color: $menuHover;
+      }
+    }
+  }
+}
+@mixin submenu-classics-theme {
+  .el-submenu__title {
+    color: $font-color-light;
+    background-color: $subMenuBg;
+    &:hover {
+      background-color: $subMenuHover;
+    }
+  }
+  .el-menu-item {
+    color: $font-color-light;
+    background-color: $subMenuBg;
+    &:hover {
+      background-color: $subMenuHover;
+    }
+    &.is-active {
+      color: $menuActiveText;
+    }
+  }
+}
 .main_sidebar.sidebar_menu {
   height: calc(100% - #{$header-height});
   width: $sidebar-max-width;
   box-sizing: border-box;
   transition: $width-transition-base;
-  background-color: $menuBg;
   .el-scrollbar {
     height: 100%;
     .scrollbar-wrapper {
@@ -12,7 +56,9 @@
         height: 100%;
         .el-menu {
           border-right: none;
+          background-color: $menuBg;
           height: 100%;
+          @include menu-classics-theme;
           .menu-item_link {
             text-decoration: none;
           }
@@ -45,18 +91,7 @@
             }
           }
           .el-submenu .menu__nest {
-            .el-submenu__title {
-              background-color: $subMenuBg !important;
-              &:hover {
-                background-color: $subMenuHover !important;
-              }
-            }
-            .el-menu-item {
-              background-color: $subMenuBg !important;
-              &:hover {
-                background-color: $subMenuHover !important;
-              }
-            }
+            @include submenu-classics-theme;
           }
         }
       }

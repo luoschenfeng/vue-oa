@@ -5,10 +5,7 @@
         :default-active="menu.cuttentActive"
         :collapse="sidebarCollapse"
         :collapse-transition="false"
-        :background-color="variables.menuBg"
-        :text-color="variables.menuText"
         :unique-opened="false"
-        :active-text-color="variables.menuActiveText"
       >
         <submenu-component :routes="routes" />
       </el-menu>
@@ -18,7 +15,8 @@
 
 <script>
 import SubmenuComponent from './components/SubmenuComponent'
-import variables from '@/styles/variables.scss'
+
+// import variables from '@/styles/variables.scss'
 export default {
   name: 'LayoutSidebar',
   components: {
@@ -38,9 +36,10 @@ export default {
     sidebarCollapse() {
       return this.$store.getters['sidebarCollapse']
     },
-    variables() {
-      return variables
-    },
+
+    // variables() {
+    //   return variables
+    // },
   },
 }
 </script>

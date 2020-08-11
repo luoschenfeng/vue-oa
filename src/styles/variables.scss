@@ -58,12 +58,12 @@ $font-color-lighter: #f4f4f5;
 $menuText: $font-color-light;
 $menuActiveText: $default-color-primary;
 $subMenuActiveText: $font-color-lighter; // https://github.com/ElemeFE/element/issues/12951
-$headerBg: #1e1e1e;
-$menuBg: #304156;
-$menuHover: #263445;
+$headerBg: #333333;
+$menuBg: #333333;
+$menuHover: #1e1e1e;
 
-$subMenuBg: #1f2d3d;
-$subMenuHover: #001528;
+$subMenuBg: #3a3d41;
+$subMenuHover: #46474e;
 
 // the :export directive is the magic sauce for webpack
 // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
