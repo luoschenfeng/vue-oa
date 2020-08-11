@@ -1,0 +1,65 @@
+.main_sidebar.sidebar_menu {
+  height: calc(100% - #{$header-height});
+  width: $sidebar-max-width;
+  box-sizing: border-box;
+  transition: $width-transition-base;
+  // background-color: $menuBg;
+  .el-scrollbar {
+    height: 100%;
+    .scrollbar-wrapper {
+      height: 100%;
+      .el-scrollbar__view {
+        height: 100%;
+        .el-menu {
+          border-right: none;
+          height: 100%;
+          .menu-item_link {
+            text-decoration: none;
+          }
+          &.el-menu--collapse {
+            .el-submenu {
+              .el-submenu__title {
+                span {
+                  height: 0;
+                  width: 0;
+                  overflow: hidden;
+                  visibility: hidden;
+                  display: inline-block;
+                }
+                .el-submenu__icon-arrow {
+                  display: none;
+                }
+              }
+            }
+            .el-menu-item {
+              span {
+                height: 0;
+                width: 0;
+                overflow: hidden;
+                visibility: hidden;
+                display: inline-block;
+              }
+              .el-submenu__icon-arrow {
+                display: none;
+              }
+            }
+          }
+          .el-submenu .menu__nest {
+            .el-submenu__title {
+              background-color: $subMenuBg !important;
+              &:hover {
+                background-color: $subMenuHover !important;
+              }
+            }
+            .el-menu-item {
+              background-color: $subMenuBg !important;
+              &:hover {
+                background-color: $subMenuHover !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
