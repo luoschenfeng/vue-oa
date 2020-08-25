@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d21dc20"],{d350:function(t,r,e){"use strict";e.r(r);var a=function(){var t=this,r=t.$createElement,e=t._self._c||r;return e("div",[t._v(" at laster -router - one "),e("router-link",{attrs:{to:{name:"Dashboard"}}},[t._v(" Dashboard ")]),e("router-link",{attrs:{to:{name:"LasterRouterTwo"}}},[t._v(" laster -router - two ")])],1)},n=[],o={},s=o,u=e("2877"),l=Object(u["a"])(s,a,n,!1,null,null,null);r["default"]=l.exports}}]);
-//# sourceMappingURL=chunk-2d21dc20.0a9694de.js.map
