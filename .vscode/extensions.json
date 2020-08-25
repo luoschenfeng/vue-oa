@@ -3,14 +3,14 @@
   // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
   // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
-    // chrome智能提示
+    // chrome
     "msjsdiag.debugger-for-chrome",
 
     // element-ui 提示
     "elemefe.vscode-element-helper",
 
-    // 路径智能提示
-    "christian-kohler.path-intellisense"
+    // vuter
+    "yoyo930021.vuter",
   ],
 
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.

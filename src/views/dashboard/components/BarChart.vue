@@ -36,21 +36,26 @@ export default {
     };
   },
   watch: {
-    chartData() {
-      this.initEchart()
+    chartData: {
+      handler: function () { this.initEchart() },
+      deep: true,
     },
+  },
+  mounted() {
+    this.$el.addEventListener('resize', function () { console.log(1) })
   },
   methods: {
     initEchart() {
-      let echart = echarts.init(this.$el, 'dark')
+      this.chart = echarts.init(this.$el, 'dark')
 
-      echart.setOption({
+      this.chart.setOption({
         legend: {},
         tooltip: {},
         grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
+          top: 50,
+          left: '2%',
+          right: '2%',
+          bottom: '2%',
           containLabel: true,
         },
         xAxis: {
@@ -74,6 +79,7 @@ export default {
               y: 'male',
               seriesName: 'male',
             },
+            animationDuration: 6000,
           },
           {
             type: 'bar',
@@ -82,10 +88,15 @@ export default {
               y: 'female',
               seriesName: 'female',
             },
+            animationDuration: 6000,
           },
         ],
       })
     },
+
+    // chartResize() {
+    //   this.chart.resize()
+    // },
   },
 }
 </script>

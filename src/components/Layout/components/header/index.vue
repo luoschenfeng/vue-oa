@@ -129,7 +129,7 @@ export default {
     line-height: $header-height;
     box-sizing: border-box;
     width: $sidebar-max-width;
-    transition: $width-transition-base;
+    // transition: $width-transition-base;
     // border-right: 1px solid $--border-color-lighter;
     // border-bottom: 1px solid $--border-color-lighter;
     // &:hover {

@@ -1,8 +1,8 @@
 const et = require('element-theme')
 
 et.run({
-  config: './src/styles/default-element-variables.scss',
-  out: './src/assets/theme/default',
+  config: './src/styles/classics-element-variables.scss',
+  out: './src/assets/theme/classics',
   minimize: true,
 })
 et.run({
