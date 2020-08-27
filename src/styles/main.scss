@@ -8,6 +8,13 @@
 html {
   height: 100%;
   box-sizing: border-box;
+  color: $classics-color-text-primary;
+}
+a {
+  color: $--link-color;
+}
+a:hover, a:focus {
+  color: $--link-hover-color;
 }
 body {
   height: 100%;
@@ -23,7 +30,7 @@ body {
 #app {
   height: 100%;
   font-size: $font-size-p;
-  background-color: $app-bg;
+  background-color: $classics-app-bg;
 }
 
 .svg-icon {

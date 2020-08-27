@@ -118,8 +118,8 @@ export default {
 <style lang="scss" scoped>
 .header {
   display: flex;
-  background: $headerBg;
-  color: $font-color-light;
+  background: $classics-headerBg;
+  color: $classics-color-text-primary;
   justify-content: space-between;
   align-items: center;
   height: $header-height;

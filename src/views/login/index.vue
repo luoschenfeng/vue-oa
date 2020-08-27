@@ -131,6 +131,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+$login-background-color: $green-background-color;
+$login-background-image: $green-background-image;
 .login {
   height: 100%;
   text-align: center;

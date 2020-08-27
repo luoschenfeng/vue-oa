@@ -7,9 +7,11 @@
       <layout-sidebar
         :class="[sidebarCollapse ? 'main_sidebar__resize' : '','main_sidebar']"
       />
-      <keep-alive>
-        <router-view :class="[sidebarCollapse ? 'main_view__resize' : '','main_view']" />
-      </keep-alive>
+      <div class="main">
+        <keep-alive>
+          <router-view :class="[sidebarCollapse ? 'main_view__resize' : '','main_view']" />
+        </keep-alive>
+      </div>
     </div>
     <layout-sittings class="layout_sittings" />
   </div>
@@ -53,14 +55,20 @@ export default {
         width: $sidebar-min-width;
       }
     }
-    .main_view {
-      position: relative;
+    .main {
       padding: 1rem;
-      margin-left: $sidebar-max-width;
-      background-color: $app-bg;
-      transition: margin 0.24s;
-      &.main_view__resize {
-        margin-left: $sidebar-min-width;
+      background-color: $classics-app-bg;
+      .main_view {
+        background-color: $classics-router-view-bc;
+        box-shadow: $classics-box-shadow-base;
+        border-radius: $border-radius-base;
+        position: relative;
+        padding: 1rem;
+        margin-left: $sidebar-max-width;
+        transition: margin 0.24s;
+        &.main_view__resize {
+          margin-left: $sidebar-min-width;
+        }
       }
     }
   }

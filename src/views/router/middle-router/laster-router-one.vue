@@ -7,9 +7,9 @@
     <router-link :to="{name: 'LasterRouterTwo'}">
       laster -router - two
     </router-link>
-    <div @click="handelSpanClick">
-      {{ a }}
-    </div>
+    <el-checkbox v-model="checked">
+      备选项
+    </el-checkbox>
   </div>
 </template>
 
@@ -17,16 +17,10 @@
 export default {
   data() {
     return {
-      a: {
-        b: 1,
-      },
+      checked: true,
     }
   },
-  methods: {
-    handelSpanClick() {
-      this.$set(this.a, 'c', this.a.c ? this.a.c + 1 : 2)
-    },
-  },
+  methods: {},
 }
 </script>
 

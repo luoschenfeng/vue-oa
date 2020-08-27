@@ -23,16 +23,15 @@ export default {
 
 <style lang="scss" scoped>
 .chart_card {
-  background-color: $bc-primary-base;
-  box-shadow: $box-shadow-dark;
+  box-shadow: $classics-box-shadow-base;
   border-radius: $border-radius-base;
   .card_title {
     line-height: 3rem;
     height: 3rem;
     padding-left: 1rem;
     font-size: $font-size-h4;
-    color: $font-color-light;
-    border-bottom: $border-base;
+    color: $classics-color-text-primary;
+    border-bottom: $classics-border-base;
   }
   .card_content {
     padding: 1rem;

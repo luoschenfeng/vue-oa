@@ -1,42 +1,42 @@
 @mixin menu-classics-theme {
   .el-submenu__title {
-    color: $font-color-light;
+    color: $classics-menuText;
     &:focus {
-      background-color: $menuBg;
+      background-color: $classics-menuBg;
     }
     &:hover {
-      background-color: $menuHover;
+      background-color: $classics-menuHover;
     }
   }
   .el-menu-item {
-    color: $font-color-light;
+    color: $classics-menuText;
     &:focus {
-      background-color: $menuBg;
+      background-color: $classics-menuBg;
     }
     &:hover {
-      background-color: $menuHover;
+      background-color: $classics-menuHover;
     }
     &.is-active {
-      color: $menuActiveText;
+      color: $classics-menuActiveText;
     }
   }
 }
 @mixin submenu-classics-theme {
   .el-submenu__title {
-    color: $font-color-light;
-    background-color: $subMenuBg;
+    color: $classics-menuText;
+    background-color:$classics-subMenuBg;
     &:hover {
-      background-color: $subMenuHover;
+      background-color:$classics-subMenuHover;
     }
   }
   .el-menu-item {
-    color: $font-color-light;
-    background-color: $subMenuBg;
+    color: $classics-menuText;
+    background-color:$classics-subMenuBg;
     &:hover {
-      background-color: $subMenuHover;
+      background-color:$classics-subMenuHover;
     }
     &.is-active {
-      color: $menuActiveText;
+      color: $classics-menuActiveText;
     }
   }
 }
@@ -53,7 +53,7 @@
         height: 100%;
         .el-menu {
           border-right: none;
-          background-color: $menuBg;
+          background-color: $classics-menuBg;
           height: 100%;
           @include menu-classics-theme;
           .menu-item_link {

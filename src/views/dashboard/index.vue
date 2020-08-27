@@ -1,11 +1,11 @@
 <template>
   <div>
-    <!-- <echart-card :card-title="$t('dashboard.echart.barChartTitle')"> -->
-    <BarChart
-      :chart-data="sexStatisticMonthly"
-      class-name="chart"
-    />
-    <!-- </echart-card> -->
+    <echart-card :card-title="$t('dashboard.echart.barChartTitle')">
+      <BarChart
+        :chart-data="sexStatisticMonthly"
+        class-name="chart"
+      />
+    </echart-card>
   </div>
 </template>
 
@@ -16,14 +16,14 @@ import {
 
 import BarChart from './components/BarChart'
 
-// import EchartCard from '@/components/EchartCard'
+import EchartCard from '@/components/EchartCard'
 export default {
   name: 'Dashboard',
 
   components: {
     BarChart,
 
-    // EchartCard,
+    EchartCard,
   },
   data() {
 
