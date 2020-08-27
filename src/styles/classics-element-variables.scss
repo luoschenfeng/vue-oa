@@ -18,7 +18,7 @@ $--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
 /// color|1|Brand Color|0
 $--color-primary: #a37b0d !default;
 /// color|1|Background Color|4
-$--color-white: #fff !default;
+$--color-white: #f00 !default;
 /// color|1|Background Color|4
 $--color-black: #000 !default;
 $--color-primary-light-1: mix($--color-black, $--color-primary, 10%) !default;
