@@ -81,4 +81,69 @@ export function debounce(func, wait, immediate) {
   }
 }
 
+/**
+ * 
+ * @param {string} originColor 
+ */
+export function switchColor(originColor) {
+  let color = []
 
+  for (let i of originColor) {
+    if (/[A-Z]/.test(i)) {
+      i = i.toLocaleLowerCase()
+    }
+    switch (i) {
+    case 'f':
+      color.push('0')
+      break
+    case 'e':
+      color.push('1')
+      break
+    case 'd':
+      color.push('2')
+      break
+    case 'c':
+      color.push('3')
+      break
+    case 'b':
+      color.push('4')
+      break
+    case 'a':
+      color.push('5')
+      break
+    case '0':
+      color.push('f')
+      break  
+    case '1':
+      color.push('e')
+      break 
+    case '2':
+      color.push('d')
+      break 
+    case '3':
+      color.push('c')
+      break 
+    case '4':
+      color.push('b')
+      break 
+    case '5':
+      color.push('a')
+      break 
+    case '6':
+      color.push('9')
+      break 
+    case '7':
+      color.push('8')
+      break 
+    case '8':
+      color.push('7')
+      break 
+    case '9':
+      color.push('6')
+      break 
+    default:
+      break
+    }
+  }
+  return color.join('')
+}

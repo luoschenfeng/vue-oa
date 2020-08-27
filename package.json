@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "theme:generate": "node theme.config.js",
+    "theme": "node theme.config.js",
     "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml",
     "lint": "vue-cli-service lint"
   },

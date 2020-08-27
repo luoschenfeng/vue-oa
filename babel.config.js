@@ -12,7 +12,7 @@ module.exports = {
       'component',
       {
         'libraryName': 'element-ui',
-        'styleLibraryName': 'theme-chalk',
+        'styleLibraryName': '~src/assets/theme/classics',
       },
     ],
   ],
