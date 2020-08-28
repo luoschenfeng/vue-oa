@@ -1,4 +1,5 @@
 $assets: '~@/assets';
+$white: #fff;
 $header-height: 5rem;
 $sidebar-max-width: 20rem;
 $sidebar-min-width: 6.5rem;
@@ -26,7 +27,7 @@ $classics-color-primary: #a37b0d !default;
 /// color|1|Background Color|4
 $classics-color-black: #000000 !default;
 /// color|1|Background Color|4
-$classics-color-white: #ffffff !default;
+$classics-color-white: #3f3b33 !default;
 $classics-color-primary-light-1: mix($classics-color-black, $classics-color-primary, 10%) !default;
 $classics-color-primary-light-2: mix($classics-color-black, $classics-color-primary, 20%) !default;
 $classics-color-primary-light-3: mix($classics-color-black, $classics-color-primary, 30%) !default;
@@ -48,15 +49,15 @@ $classics-color-black-light-7: mix($classics-color-white, $classics-color-black,
 $classics-color-black-light-8: mix($classics-color-white, $classics-color-black, 80%) !default;
 $classics-color-black-light-9: mix($classics-color-white, $classics-color-black, 90%) !default;
 
-$classics-color-white-dark-1: mix($classics-color-black, $classics-color-white, 10%) !default;
-$classics-color-white-dark-2: mix($classics-color-black, $classics-color-white, 20%) !default;
-$classics-color-white-dark-3: mix($classics-color-black, $classics-color-white, 30%) !default;
-$classics-color-white-dark-4: mix($classics-color-black, $classics-color-white, 40%) !default;
-$classics-color-white-dark-5: mix($classics-color-black, $classics-color-white, 50%) !default;
-$classics-color-white-dark-6: mix($classics-color-black, $classics-color-white, 60%) !default;
-$classics-color-white-dark-7: mix($classics-color-black, $classics-color-white, 70%) !default;
-$classics-color-white-dark-8: mix($classics-color-black, $classics-color-white, 80%) !default;
-$classics-color-white-dark-9: mix($classics-color-black, $classics-color-white, 90%) !default;
+$classics-color-white-dark-1: mix($classics-color-black, $white, 10%) !default;
+$classics-color-white-dark-2: mix($classics-color-black, $white, 20%) !default;
+$classics-color-white-dark-3: mix($classics-color-black, $white, 30%) !default;
+$classics-color-white-dark-4: mix($classics-color-black, $white, 40%) !default;
+$classics-color-white-dark-5: mix($classics-color-black, $white, 50%) !default;
+$classics-color-white-dark-6: mix($classics-color-black, $white, 60%) !default;
+$classics-color-white-dark-7: mix($classics-color-black, $white, 70%) !default;
+$classics-color-white-dark-8: mix($classics-color-black, $white, 80%) !default;
+$classics-color-white-dark-9: mix($classics-color-black, $white, 90%) !default;
 /// color|1|Functional Color|1
 $classics-color-success: #3fa26c !default;
 /// color|1|Functional Color|1
@@ -82,7 +83,7 @@ $classics-color-text-regular: #9f9d99 !default;
 /// color|1|Font Color|2
 $classics-color-text-secondary: #6f6c66 !default;
 /// color|1|Font Color|2
-$classics-color-text-placeholder: #3f3b33 !default;
+$classics-color-text-placeholder: #9f9d99 !default;
 /// color|1|Border Color|3
 $classics-border-color-base: #232019 !default;
 /// color|1|Border Color|3
