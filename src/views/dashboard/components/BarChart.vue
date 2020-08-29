@@ -8,8 +8,10 @@
 
 <script>
 import echarts from 'echarts'
+import resize from '@/mixins/echarts/resize'
 export default {
   name: 'BarChart',
+  mixins: [ resize ],
   props: {
     className: {
       type: String,
@@ -35,17 +37,27 @@ export default {
       chart: null,
     };
   },
+
   watch: {
     chartData: {
-      handler: function () { this.initEchart() },
+      handler: function (chartData) { this.initEchart(chartData) },
       deep: true,
     },
   },
   mounted() {
-    this.$el.addEventListener('resize', function () { console.log(1) })
+    if (this.chartData.length !== 0) {
+      this.initEchart(this.chartData)
+    }
+  },
+  beforeDestroy() {
+    if (!this.chart) {
+      return
+    }
+    this.chart.dispose()
+    this.chart = null
   },
   methods: {
-    initEchart() {
+    initEchart(chartData) {
       this.chart = echarts.init(this.$el, 'dark')
 
       this.chart.setOption({
@@ -63,7 +75,7 @@ export default {
         },
         yAxis: {},
         dataset: {
-          source: this.chartData,
+          source: chartData,
           dimensions: [
             'date',
             'male',
@@ -93,10 +105,6 @@ export default {
         ],
       })
     },
-
-    // chartResize() {
-    //   this.chart.resize()
-    // },
   },
 }
 </script>

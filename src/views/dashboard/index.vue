@@ -32,7 +32,7 @@ export default {
       sexStatisticMonthly: [],
     }
   },
-  created() {
+  mounted() {
     this.init()
   },
   methods: {

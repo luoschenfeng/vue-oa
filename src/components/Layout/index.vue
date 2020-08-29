@@ -5,11 +5,11 @@
     />
     <div class="layout_main">
       <layout-sidebar
-        :class="[sidebarCollapse ? 'main_sidebar__resize' : '','main_sidebar']"
+        :class="['main_sidebar', sidebarCollapse ? 'main_sidebar__resize' : '']"
       />
-      <div class="main">
+      <div :class="['main', sidebarCollapse ? 'main__resize' : '']">
         <keep-alive>
-          <router-view :class="[sidebarCollapse ? 'main_view__resize' : '','main_view']" />
+          <router-view class="main_view" />
         </keep-alive>
       </div>
     </div>
@@ -58,17 +58,17 @@ export default {
     .main {
       padding: 1rem;
       background-color: $classics-app-bg;
+      position: relative;
+      margin-left: $sidebar-max-width;
+      transition: margin 0.24s;
+      &.main__resize {
+        margin-left: $sidebar-min-width;
+      }
       .main_view {
+        padding: 1rem;
         background-color: $classics-router-view-bc;
         box-shadow: $classics-box-shadow-base;
         border-radius: $border-radius-base;
-        position: relative;
-        padding: 1rem;
-        margin-left: $sidebar-max-width;
-        transition: margin 0.24s;
-        &.main_view__resize {
-          margin-left: $sidebar-min-width;
-        }
       }
     }
   }
